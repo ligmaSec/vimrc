@@ -24,3 +24,5 @@ nnoremap N Nzz
 " sync y register with clipboard
 set clipboard+=unnamedplus
 
+
+colorscheme moonfly
