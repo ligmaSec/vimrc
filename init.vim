@@ -1,3 +1,5 @@
+lua require("ligma")
+
 " relative number toggling when in insert mode
 set number
 augroup numbertoggle
@@ -8,7 +10,6 @@ augroup END
 
 
 
-lua print("hello ")
 
 " half page browsing and centering
 nnoremap <C-d> <C-d>zz
