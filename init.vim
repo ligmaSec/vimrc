@@ -1,7 +1,8 @@
 lua require("ligma")
 
-" relative number toggling when in insert mode
 set number
+
+" autoswitch between relative and absolute numbering when in edition mode 
 augroup numbertoggle
   autocmd!
   autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
@@ -24,5 +25,3 @@ nnoremap N Nzz
 " sync y register with clipboard
 set clipboard+=unnamedplus
 
-" theme
-colorscheme moonfly
