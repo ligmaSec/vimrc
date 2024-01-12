@@ -52,6 +52,7 @@ return packer.startup(function(use)
     use { "bluz71/vim-moonfly-colors", as = "moonfly" }
     use("vim-airline/vim-airline")
     -- use("dense-analysis/ale")
+    use("github/copilot.vim")
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
