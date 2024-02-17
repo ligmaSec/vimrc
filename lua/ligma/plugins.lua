@@ -51,6 +51,7 @@ return packer.startup(function(use)
     }
     use { "bluz71/vim-moonfly-colors", as = "moonfly" }
     use("vim-airline/vim-airline")
+    use('vim-airline/vim-airline-themes')
     -- use("dense-analysis/ale")
     use("github/copilot.vim")
     use {
