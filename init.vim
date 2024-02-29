@@ -27,3 +27,8 @@ nnoremap N Nzz
 " sync y register with clipboard
 set clipboard+=unnamedplus
 
+
+
+"airline theme https://github.com/vim-airline/vim-airline/wiki/Screenshots
+let g:airline_theme='jellybeans'
+" let g:airline_theme='deus'
