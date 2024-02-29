@@ -53,6 +53,14 @@ return packer.startup(function(use)
     use("vim-airline/vim-airline")
     -- use("dense-analysis/ale")
     use("github/copilot.vim")
+    use("nvim-lua/plenary.nvim")
+    use {
+        "saecki/crates.nvim",
+        dependencies = "nvim-lua/plenary.nvim",
+        config = function()
+            require("crates").setup()
+        end
+    }
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

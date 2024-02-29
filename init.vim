@@ -1,5 +1,7 @@
 lua require("ligma")
 
+lua print("fk it we ball")
+
 set number
 
 " autoswitch between relative and absolute numbering when in edition mode 
