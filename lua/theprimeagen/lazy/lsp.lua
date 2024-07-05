@@ -61,7 +61,7 @@ return {
                         filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
                         init_options = {
                             typescript = {
-                                tsdk = '/path/to/your/tsserver'  -- Adjust this path
+                                tsdk = './node_modules/typescript/lib/'  -- Adjust this path
                             }
                         }
                     })
