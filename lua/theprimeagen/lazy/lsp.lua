@@ -29,6 +29,8 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "gopls",
+                "volar",
+                "tsserver"
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -52,6 +54,17 @@ return {
                     vim.g.zig_fmt_parse_errors = 0
                     vim.g.zig_fmt_autosave = 0
 
+                end,
+                ["volar"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.volar.setup({
+                        filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+                        init_options = {
+                            typescript = {
+                                tsdk = '/path/to/your/tsserver'  -- Adjust this path
+                            }
+                        }
+                    })
                 end,
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")

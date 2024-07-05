@@ -56,3 +56,25 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+
+-- llm
+
+vim.keymap.set("n", "<leader>m", function() require("llm").create_llm_md() end)
+
+-- keybinds for prompting with groq
+vim.keymap.set("n", "<leader>,", function() require("llm").prompt({ replace = false, service = "groq" }) end)
+vim.keymap.set("v", "<leader>,", function() require("llm").prompt({ replace = false, service = "groq" }) end)
+vim.keymap.set("v", "<leader>.", function() require("llm").prompt({ replace = true, service = "groq" }) end)
+
+-- keybinds for prompting with openai
+vim.keymap.set("n", "<leader>g,", function() require("llm").prompt({ replace = false, service = "openai" }) end)
+vim.keymap.set("v", "<leader>g,", function() require("llm").prompt({ replace = false, service = "openai" }) end)
+vim.keymap.set("v", "<leader>g.", function() require("llm").prompt({ replace = true, service = "openai" }) end)
+
+-- keybinds to support vim motions
+vim.keymap.set("n", "g,", function() require("llm").prompt_operatorfunc({ replace = false, service = "groq" }) end)
+vim.keymap.set("n", "g.", function() require("llm").prompt_operatorfunc({ replace = true, service = "groq" }) end)
+
+-- swap previous and next location
+vim.api.nvim_set_keymap('n', '<C-i>', '<C-o>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-o>', '<C-i>', { noremap = true, silent = true })
