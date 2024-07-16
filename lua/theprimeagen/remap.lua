@@ -76,5 +76,5 @@ vim.keymap.set("n", "g,", function() require("llm").prompt_operatorfunc({ replac
 vim.keymap.set("n", "g.", function() require("llm").prompt_operatorfunc({ replace = true, service = "groq" }) end)
 
 -- swap previous and next location
-vim.api.nvim_set_keymap('n', '<C-i>', '<C-o>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-o>', '<C-i>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-i>', ':bp<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-o>', ':bn<CR>', { noremap = true, silent = true })

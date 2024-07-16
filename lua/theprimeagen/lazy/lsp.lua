@@ -30,7 +30,7 @@ return {
                 "rust_analyzer",
                 "gopls",
                 "volar",
-                "tsserver"
+                "tsserver",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -58,12 +58,28 @@ return {
                 ["volar"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.volar.setup({
-                        filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+                        filetypes = {'vue'},
+                        init_options = {
+                            vue = {
+                                hybridMode = false,
+                            },
+                            typescript = {
+                                tsdk = vim.fn.getcwd() .. '/node_modules/typescript/lib'
+                            },
+                        }
+                    })
+                end,
+
+                ["tsserver"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.tsserver.setup({
+                        filetypes = {"javascript", "javascriptreact", "typescript", "typescriptreact" },
                         init_options = {
                             typescript = {
-                                tsdk = './node_modules/typescript/lib/'  -- Adjust this path
-                            }
+                                tsdk = vim.fn.getcwd() .. '/node_modules/typescript/lib'
+                            },
                         }
+
                     })
                 end,
                 ["lua_ls"] = function()
